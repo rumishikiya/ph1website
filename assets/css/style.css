@@ -458,8 +458,8 @@ body{
    display: block;
    width: 24px;
    height: 24px;
-   background: url("../img/icon-check.svg");
    flex-shrink: 0;
+   background: url(/assets/img/icon-check.svg);
 }
 
 .daily-outlineItem {
