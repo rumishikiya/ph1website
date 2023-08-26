@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/splide.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/sp/style.css">
+    <link rel="stylesheet" href="./assets/css/sp/style.css" media="screen and (max-width:1024px)">
     <script src="./assets/js/splide.min.js" defer></script>
     <script src="./assets/js/script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,14 +21,28 @@
 
 <body>
     <header class="header">
-        <a href="./" class="header-logo">
+        <a href="./" class="header-logo" id="js-header">
             <img src="./assets/img/logo.svg" alt="POSSE">
         </a>
         <button class="header-button" id="js-headerButton">
-            <span class="header-buttonLine"></span>
-            <span class="header-buttonLine"></span>
-            <span class="header-buttonLine"></span>
+            <div class="header-buttonLine"></div>
+            <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+            <input id="drawer_input" class="drawer_hidden" type="checkbox">
+            <!-- ハンバーガーアイコン -->
+            <label for="drawer_input" class="drawer_open"><span></span></label>
+            <!-- メニュー -->
+            <nav class="nav_content">
+            <ul class="nav_list">
+            <li class="nav_item"><a href="">メニュー1</a></li>
+            <li class="nav_item"><a href="">メニュー2</a></li>
+            <li class="nav_item"><a href="">メニュー3</a></li>
+            </ul>
+        </nav>
+
         </button>
+
+        
+
         <nav class="header-nav">
             <ul class="header-navList">
                 <li class="header-navItem">
@@ -140,7 +154,7 @@
                         <ul class="event-list">
                             <li class="event-item">
                                 <figure class="event-itemImage">
-                                    <img src="./assets/img/img-event01.jpg" alt="">
+                                    <img src="./assets/img/img-event01.jpg" class="event-itemImage01">
                                 </figure>
                                 <div class="event-itemBody">
                                     <p class="event-itemDate">
@@ -201,96 +215,100 @@
                 </div>
                 <div class="section-body">
                     <div class="container">
-                        <ul class="daily-list">
-                            <li class="daily-item">
-                                <figure class="daily-itemImage">
-                                    <img src="./assets/img/img-daily01.jpg" alt="">
-                                </figure>
-                                <div class="daily-itemBody">
-                                    <h2 class="daily-title">
-                                        <span class="daily-titleNumber">01</span>
-                                        <span class="daily-titleText">ミートアップ</span>
-                                    </h2>
-                                    <ul class="daily-outline">
-                                        <li class="daily-outlineItem">毎週月曜日 19:30~22:30</li>
-                                        <li class="daily-outlineItem">全員参加</li>
-                                    </ul>
-                                    <div class="daily-description">
-                                        <p>全体ミーティングです。<br>各局からのお知らせや、講演会など目白押しです。</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="daily-item">
-                                <figure class="daily-itemImage">
-                                    <img src="./assets/img/img-daily02.jpg" alt="">
-                                </figure>
-                                <div class="daily-itemBody">
-                                    <h2 class="daily-title">
-                                        <span class="daily-titleNumber">02</span>
-                                        <span class="daily-titleText">縦もく</span>
-                                    </h2>
-                                    <ul class="daily-outline">
-                                        <li class="daily-outlineItem">週1回 2時間</li>
-                                    </ul>
-                                    <div class="daily-description">
-                                        <p>期生関係なくzoomを繋ぎ、わからないところを先輩に質問できます。<br>わかるまで丁寧に教えてくれます。</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="daily-item">
-                                <figure class="daily-itemImage">
-                                    <img src="./assets/img/img-daily03.jpg" alt="">
-                                </figure>
-                                <div class="daily-itemBody">
-                                    <h2 class="daily-title">
-                                        <span class="daily-titleNumber">03</span>
-                                        <span class="daily-titleText">横もく</span>
-                                    </h2>
-                                    <ul class="daily-outline">
-                                        <li class="daily-outlineItem">週1回 3時間</li>
-                                    </ul>
-                                    <div class="daily-description">
-                                        <p>同期と3～4人一組で学習しながら、わからないところを共有、質問できます。<br>オフラインで集合したり、共にハッカソンに挑んだりします。</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="daily-item">
-                                <figure class="daily-itemImage">
-                                    <img src="./assets/img/img-daily04.jpg" alt="">
-                                </figure>
-                                <div class="daily-itemBody">
-                                    <h2 class="daily-title">
-                                        <span class="daily-titleNumber">04</span>
-                                        <span class="daily-titleText">スペもく</span>
-                                    </h2>
-                                    <ul class="daily-outline">
-                                        <li class="daily-outlineItem">週1回 1時間</li>
-                                        <li class="daily-outlineItem">自由参加</li>
-                                    </ul>
-                                    <div class="daily-description">
-                                        <p>メンターさんからのアドバイスを受けることができます。<br>毎回得る知識が多く、とてもありがたい機会です。</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="daily-item">
-                                <figure class="daily-itemImage">
-                                    <img src="./assets/img/img-daily05.jpg" alt="">
-                                </figure>
-                                <div class="daily-itemBody">
-                                    <h2 class="daily-title">
-                                        <span class="daily-titleNumber">05</span>
-                                        <span class="daily-titleText">飯もく</span>
-                                    </h2>
-                                    <ul class="daily-outline">
-                                        <li class="daily-outlineItem">不定期 3時間</li>
-                                        <li class="daily-outlineItem">全員参加</li>
-                                    </ul>
-                                    <div class="daily-description">
-                                        <p>ご飯を食べながら作業をします。表参道の美味しいお店をたくさん発見できることが楽しいです！</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                        <div class="about-column">
+                            <div class="daily-slide">
+                                <ul class="daily-list">
+                                    <li class="daily-item">
+                                        <figure class="daily-itemImage">
+                                            <img src="./assets/img/img-daily01.jpg" alt="">
+                                        </figure>
+                                        <div class="daily-itemBody">
+                                            <h2 class="daily-title">
+                                                <span class="daily-titleNumber">01</span>
+                                                <span class="daily-titleText">ミートアップ</span>
+                                            </h2>
+                                            <ul class="daily-outline">
+                                                <li class="daily-outlineItem">毎週月曜日 19:30~22:30</li>
+                                                <li class="daily-outlineItem">全員参加</li>
+                                            </ul>
+                                            <div class="daily-description">
+                                                <p>全体ミーティングです。<br>各局からのお知らせや、講演会など目白押しです。</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="daily-item">
+                                        <figure class="daily-itemImage">
+                                            <img src="./assets/img/img-daily02.jpg" alt="">
+                                        </figure>
+                                        <div class="daily-itemBody">
+                                            <h2 class="daily-title">
+                                                <span class="daily-titleNumber">02</span>
+                                                <span class="daily-titleText">縦もく</span>
+                                            </h2>
+                                            <ul class="daily-outline">
+                                                <li class="daily-outlineItem">週1回 2時間</li>
+                                            </ul>
+                                            <div class="daily-description">
+                                                <p>期生関係なくzoomを繋ぎ、わからないところを先輩に質問できます。<br>わかるまで丁寧に教えてくれます。</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="daily-item">
+                                        <figure class="daily-itemImage">
+                                            <img src="./assets/img/img-daily03.jpg" alt="">
+                                        </figure>
+                                        <div class="daily-itemBody">
+                                            <h2 class="daily-title">
+                                                <span class="daily-titleNumber">03</span>
+                                                <span class="daily-titleText">横もく</span>
+                                            </h2>
+                                            <ul class="daily-outline">
+                                                <li class="daily-outlineItem">週1回 3時間</li>
+                                            </ul>
+                                            <div class="daily-description">
+                                                <p>同期と3～4人一組で学習しながら、わからないところを共有、質問できます。<br>オフラインで集合したり、共にハッカソンに挑んだりします。</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="daily-item">
+                                        <figure class="daily-itemImage">
+                                            <img src="./assets/img/img-daily04.jpg" alt="">
+                                        </figure>
+                                        <div class="daily-itemBody">
+                                            <h2 class="daily-title">
+                                                <span class="daily-titleNumber">04</span>
+                                                <span class="daily-titleText">スペもく</span>
+                                            </h2>
+                                            <ul class="daily-outline">
+                                                <li class="daily-outlineItem">週1回 1時間</li>
+                                                <li class="daily-outlineItem">自由参加</li>
+                                            </ul>
+                                            <div class="daily-description">
+                                                <p>メンターさんからのアドバイスを受けることができます。<br>毎回得る知識が多く、とてもありがたい機会です。</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="daily-item">
+                                        <figure class="daily-itemImage">
+                                            <img src="./assets/img/img-daily05.jpg" alt="">
+                                        </figure>
+                                        <div class="daily-itemBody">
+                                            <h2 class="daily-title">
+                                                <span class="daily-titleNumber">05</span>
+                                                <span class="daily-titleText">飯もく</span>
+                                            </h2>
+                                            <ul class="daily-outline">
+                                                <li class="daily-outlineItem">不定期 3時間</li>
+                                                <li class="daily-outlineItem">全員参加</li>
+                                            </ul>
+                                            <div class="daily-description">
+                                                <p>ご飯を食べながら作業をします。表参道の美味しいお店をたくさん発見できることが楽しいです！</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

@@ -10,8 +10,106 @@
 *    1.3 - 汎用スタイル
 *
 * 2.0 - Sections
-*    2.1 - ヘッダー
-*    2.2 - フッター
+*    2.1 - ヘッダー*/
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: var(--white-color);
+  border-bottom: solid 1px var(--gray-light-color);
+  padding: 0 12px;
+  z-index: 10000;
+  transition: background-color .3s linear;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* チェックボックスを非表示にする */
+.drawer_hidden {
+  display: none;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+.drawer_open {
+  display: flex;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;/* 重なり順を一番上にする */
+  cursor: pointer;
+}
+
+/* ハンバーガーメニューのアイコン */
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background: #0071bc;
+  transition: 0.5s;
+  position: absolute;
+}
+
+/* 三本線の一番上の棒の位置調整 */
+.drawer_open span:before {
+  bottom: 8px;
+}
+
+/* 三本線の一番下の棒の位置調整 */
+.drawer_open span:after {
+  top: 8px;
+}
+  
+/* メニューのデザイン*/
+.nav_content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%; /* メニューを画面の外に飛ばす */
+  z-index: 99;
+  background: #fff;
+  transition: .5s;
+}
+
+.header-nav {
+  position: fixed;
+  inset: 0;
+  background-color: #f7f9fb;
+  visibility: hidden;
+  opacity: 0; /*この二つの組み合わせで完全に非表示の状態から要素を滑らかにフェードイン*/
+  flex-direction: column;/*スマホで縦向きになる*/
+  gap: 0; /*要素間の隙間ゼロ*/
+  padding: 120px 24px 40px 24px;
+  transition: opacity .3s linear visibility .3s linear;
+}
+
+.header.is-open .header-buttonLine:nth-of-type(1) {
+  transform: translateX(-50%) rotate(45deg);
+  top: 20px;
+}
+
+.header.is-open .header-buttonLine:nth-of-type(2) {
+  opacity: 0;
+}
+
+.header.is-open .header-buttonLine:nth-of-type(3) {
+  transform: translateX(-50%) rotate(45deg);
+  top: 20px;
+}
+
+.header.is-open .header-nav {
+  visibility: visible;
+  opacity: 1;
+}
+/*    2.2 - フッター
 *    2.3 - メインビジュアル*/
 
 .mainvisual {
@@ -31,7 +129,7 @@
   padding-left: 8px;
 }
 
-.mainvisual-head{
+.mainvisual-head {
   gap: 8px;
 }
 
@@ -39,70 +137,13 @@
   display: none;
 }
 /*    2.4 - POSSEとは
-*    2.5 - イベント
-*    2.6 - 日常生活
-*    2.7 - 公式LINE
-*
-* 3.0 - Animation, JavaScript Object
-*    3.1 - フェードイン
-*    3.2 - スライダー
-*
-*/
+*    2.5 - イベント*/
+.event-list {
+  justify-content: flex-start;
+}
 
-/* ===================================================
-  レスポンシブ
-=================================================== */
-
-  /* 1.0 - Common */
-  /* ============================================ */
-
-  /**
-  * 1.2 - ベーススタイル
-  */
-
-  /**
-  * 1.3 - 汎用スタイル
-  */
-
-  /* 2.0 - Sections */
-  /* ============================================ */
-
-  /**
-  * 2.1 - ヘッダー
-  */
-
-  /**
-  * 2.2 - フッター
-  */
-
-  /**
-  * 2.3 - メインビジュアル
-  */
-
-  /**
-  * 2.4 - POSSEとは
-  */
-
-  /**
-  * 2.5 - イベント
-  */
-
-  /**
-  * 2.6 - 日常生活
-  */
-
-  /**
-  * 2.7 - 公式LINE
-  */
-
-  /* 3.0 - Animation, JavaScript Object */
-  /* ============================================ */
-
-  /**
-  * 3.1 - フェードイン
-  */
-
-  /**
-  * 3.2 - スライダー
-  */
+/*    2.6 - 日常生活*/
+.daily-list {
+  flex-direction: row;
+}
 
