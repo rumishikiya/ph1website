@@ -53,7 +53,7 @@
   width: 25px;
   border-radius: 3px;
   background: #0071bc;
-  transition: 0.5s;
+  transition: 0.5s;     
   position: absolute;
 }
 
@@ -109,6 +109,7 @@
   visibility: visible;
   opacity: 1;
 }
+
 /*    2.2 - フッター
 *    2.3 - メインビジュアル*/
 

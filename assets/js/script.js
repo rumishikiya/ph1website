@@ -14,6 +14,6 @@ button.addEventListener('click', jsHeaderButtonClick);
 // クラスのトグル処理も追加
 button.addEventListener('click', () => {
     button.classList.toggle('is-open');
-    console.log(button);
+    console.log('button');
 });
 
