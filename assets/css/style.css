@@ -43,6 +43,7 @@
 
 .header-logo{
    width: 100px;
+   z-index: 9999;
 }
 
 .header-button {
@@ -52,6 +53,7 @@
    margin-left: auto;
    margin-right: 0;
 }
+
 
 .drawer-open {
    display: block;
@@ -70,12 +72,12 @@
    align-items: center;
    margin-left: auto;
    gap: 48px;
-   display: none
+   display: none;
 }
 
 .header-navList{
-   display: flex;
-   gap: 32px;
+   display: block;
+   inset: 0;
 }
 
 .header-navLink{
@@ -88,13 +90,9 @@
    display: inline-block;
 }
 
-.header-info{
-   display: none;
-}
-
 .header-snsList{
    display: flex;
-   gap: 24px;
+   margin-top: 200px;
 }
 
 /* *    2.2 - フッター
@@ -229,6 +227,7 @@ html{
 
 body{
    color: #333333;
+   padding: 0px;
 
 }
 
@@ -252,6 +251,7 @@ body{
 
 .section-body{
    margin-top: 40px;
+   margin: 0 auto;
 }
 
 .title{
@@ -357,11 +357,15 @@ body{
    overflow: auto;
 }
 
+.event-slideTrack {
+   overflow: visible;
+}
 
 .event-list {
    display: flex;
    justify-content: center;
    gap: 40px;
+   width: 1096px;
 }
 
 .event-item {
@@ -564,7 +568,7 @@ body{
    position: absolute;
    width: 14px;
    height: 14px;
-   top: 50%;
+   top: 80%;
    right: 20px;
    transform: translateY(-50%);
 }
@@ -582,3 +586,19 @@ body{
 /**
  * 3.2 - スライダー
  */
+
+/* スライド要素の最大幅を指定 */
+.splide__slide {
+   max-width: 320px; /* スライドの最大幅を設定 */
+   width: 100%; /* 幅を100%に設定して親要素に合わせる */
+}
+
+ /* スライドの中央寄せ */
+.splide__slide img {
+   margin: 0 auto; /* スライド内の画像を中央寄せにする */
+}
+
+.event-itemImage{
+   width: 100%;
+   height: auto;
+}

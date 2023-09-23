@@ -12,7 +12,7 @@
 *
 * 2.0 - Sections
 *    2.1 - ヘッダー*/
-.header{
+.header {
   position: fixed;
   top: 0;
   left: 0;
@@ -28,92 +28,160 @@
   align-items: center;
 }
 
-/* チェックボックスを非表示にする */
-.drawer_hidden {
-  display: none;
-}
-
-/* ハンバーガーアイコンの設置スペース */
-.drawer_open {
-  display: flex;
-  width: 60px;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 100;/* 重なり順を一番上にする */
-  cursor: pointer;
-}
-
-/* ハンバーガーメニューのアイコン */
-.drawer_open span,
-.drawer_open span:before,
-.drawer_open span:after {
+.header-ctaLink ::before{
   content: '';
-  display: block;
-  height: 3px;
-  width: 25px;
-  border-radius: 3px;
-  background: #0071bc;
-  transition: 0.5s;     
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
 }
 
-/* 三本線の一番上の棒の位置調整 */
-.drawer_open span:before {
-  bottom: 8px;
+.header.is-transparent:not(.is-open) {
+  background-color: transparent;
+  border: none;
 }
 
-/* 三本線の一番下の棒の位置調整 */
-.drawer_open span:after {
-  top: 8px;
+.header.is-transparent:not(.is-open) .header-logo {
+  filter: brightness(10);
 }
-  
-/* メニューのデザイン*/
-.nav_content {
+
+.header.is-transparent:not(.is-open) .header-navLink {
+  color: #FFFFFF;
+}
+
+.header.is-transparent:not(.is-open) .header-snsLink {
+  filter: brightness(10);
+}
+
+.header.is-transparent:not(.is-open) .openbtn1 {
+  background-color: transparent;
+}
+
+/*========= ナビゲーションのためのCSS ===============*/
+
+#g-nav{
+  /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+  position:fixed;
+  z-index: 999;
+  /*ナビのスタート位置と形状*/
+top:-120%;
+  left:0;
+width:100%;
+  height: 100vh;/*ナビの高さ*/
+background:#f7f9fb;
+  /*動き*/
+transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive{
+  top: 0;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list{
+  /*ナビの数が増えた場合縦スクロール*/
+  position: fixed;
+  z-index: 999; 
   width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 100%; /* メニューを画面の外に飛ばす */
-  z-index: 99;
-  background: #fff;
-  transition: .5s;
+  height: 100vh;/*表示する高さ*/
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-.header-nav {
-  position: fixed;
-  inset: 0;
-  background-color: #f7f9fb;
-  opacity: 0; /*この二つの組み合わせで完全に非表示の状態から要素を滑らかにフェードイン*/
-  flex-direction: column;/*スマホで縦向きになる*/
-  gap: 0; /*要素間の隙間ゼロ*/
-  padding: 120px 24px 40px 24px;
-  transition: opacity .3s linear visibility .3s linear;
+.Line-icon {
+  top: 50%;
+}
+/*ナビゲーション*/
+#g-nav ul {
+  /*ナビゲーション天地中央揃え*/
+  position: absolute;
+  z-index: 999;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
 }
 
-/* .drawer_open span,
-.drawer_open span:before,
-.drawer_open span:after */
+/*リストのレイアウト設定*/
 
-.is-open .drawer_open span:before{
-  bottom: 0;
-  transform: translateX(-50%) rotate(45deg);
+#g-nav li{
+list-style: none;
+  text-align: center; 
 }
 
-.is-open .drawer_open span {
-  background: transparent; 
+#g-nav li a{
+color: #0071bc;
+text-decoration: none;
+padding:10px;
+display: block;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+font-weight: bold;
 }
 
-.is-open .drawer_open span:after{
-  top: 0;
-  transform: translateX(-50%) rotate(-45deg);
-} 
 
-.is-open .header-nav {
-  visibility: visible;
-  opacity: 1;
+/*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+.openbtn1{
+  position: relative;/*ボタン内側の基点となるためrelativeを指定*/
+  cursor: pointer;
+    width: 50px;
+    height:50px;
+  border-radius: 5px;
+}
+
+/*ボタン内側*/
+.openbtn1{
+  position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+  right: 10px;
+  cursor: pointer;
+    width: 50px;
+    height:50px;
+}
+.openbtn1 span{
+  display: inline-block;
+  transition: all .4s;
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+background-color: #0071bc;
+  width: 45%;
+}
+
+
+.openbtn1 span:nth-of-type(1) {
+  top:15px; 
+}
+
+.openbtn1 span:nth-of-type(2) {
+  top:23px;
+}
+
+.openbtn1 span:nth-of-type(3) {
+  top:31px;
+}
+
+/*activeクラスが付与されると線が回転して×に*/
+
+.openbtn1.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn1.active span:nth-of-type(2) {
+  opacity: 0;/*真ん中の線は透過*/
+}
+
+.openbtn1.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
 }
 
 /*    2.2 - フッター

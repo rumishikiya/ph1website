@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ph1 POSSE課題</title>
+    <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
+<link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/5-2-1/css/5-2-1.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/splide.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -17,30 +19,57 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Plus+Jakarta+Sans:wght@400;700&display=swap"
         rel="stylesheet">
+        <!--==============レイアウトを制御する独自のCSSを読み込み===============-->
 </head>
 
 <body>
-    <header class="header">
+    <header class="header is-transparent" id="js-header">
         <a href="./" class="header-logo" id="js-header">
             <img src="./assets/img/logo.svg" alt="POSSE">
         </a>
-        <button class="header-button" id="js-headerButton">
-            <div class="header-buttonLine"></div>
-            <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
-            <input id="drawer_input" class="drawer_hidden" type="checkbox">
-            <!-- ハンバーガーアイコン -->
-            <label for="drawer_input" class="drawer_open"><span></span></label>
-            <!-- メニュー -->
-            <nav class="nav_content">
-                <ul class="nav_list">
-                    <li class="nav_item"><a href="">メニュー1</a></li>
-                    <li class="nav_item"><a href="">メニュー2</a></li>
-                    <li class="nav_item"><a href="">メニュー3</a></li>
-                </ul>
+        <div class="openbtn1"><span></span><span></span><span></span></div>
+        <nav id="g-nav">
+            <div id="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
+            <ul class="header-navList">
+                <li><a href="#">POSSEとは</a></li>  
+                <li><a href="#">イベント</a></li>  
+                <li><a href="#">日常生活</a></li>
+            </ul>
+            <ul class="header-info">
+                <li><a href="https://line.me/R/ti/p/@651htnqp?from=page" class="cta-button header-ctaLink" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/img/icon-line.svg" alt="" width="40px" height="40px" class="Line-icon">
+                    LINE追加
+                </a>
+            </li>
+            <li>
+                <a href="#" class="header-corporateLink" target="_blank" rel="noopener noreferrer">POSSE 公式サイト
+                    <svg class="cta-icon" fill="none" height="15" viewbox="0 0 14 15" width="14"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <clippath id="a">
+                                <path d="m0 .693604h14v14h-14z" />
+                            </clippath>
+                            <g clip-path="url(#a)" stroke="#0071bc" stroke-linecap="round" atroke-linejoin="round">
+                                <path d="m12.5416 8.27698v5.05752c0 .5891-.4783 1.0675-1.0675 1.0675h-10.11497c-.589171 0-1.067504-.4784-1.067504-1.0675v-10.11502c0-.58917.478333-1.0675 1.067504-1.0675h5.0575" />
+                                <path d="m10.2084.985229h3.5" />
+                                <path d="m13.7084 4.48523v-3.500001" />
+                                <path d="m7.29163 7.4019 6.41667-6.416671" />
+                            </g>
+                        </svg>
+                </a>
+            </li>
+            </ul>
+    <ul class="header-snsList">
+        <li>
+            <a href="https://www.instagram.com/posse_programming/"></a>
+            <img src="./assets/img/icon-instagram.png" alt="">
+        </li>
+        <li>
+            <a href="https://twitter.com/posse_2023"></a>
+            <img src="./assets/img/icon-twitter.png" alt="">
+        </li>
+    </ul>
+            </div>
             </nav>
-
-        </button>
-
 
 
         <nav class="header-nav">
@@ -99,7 +128,7 @@
     <!-- /.header -->
 
     <main>
-        <section class="mainvisual">
+        <section class="mainvisual" id="js-mainVisual">
             <div class="mainvisual-inner">
                 <div class="mainvisual-head">
                     <h1 class="mainvisual-title">学生プログラミングコミュニティ POSSE（ポッセ）
@@ -150,54 +179,56 @@
                 </div>
         </div>
         <div class="section-body">
-            <div class="event-slide">
-                <ul class="event-list">
-                    <li class="event-item">
-                        <figure class="event-itemImage">
-                            <img src="./assets/img/img-event01.jpg" class="event-itemImage01">
-                        </figure>
-                        <div class="event-itemBody">
-                            <p class="event-itemDate">
-                                <time datetime="2021-04">2021.April</time>
-                            </p>
-                            <p class="event-itemName">入学式</p>
-                        </div>
-                    </li>
-                    <li class="event-item">
-                        <figure class="event-itemImage">
-                            <img src="./assets/img/img-event02.jpg" alt="">
-                        </figure>
-                        <div class="event-itemBody">
-                            <p class="event-itemDate">
-                                <time datetime="2021-03">2021.Mar</time>
-                            </p>
-                            <p class="event-itemName">軽井沢旅行</p>
-                        </div>
-                    </li>
-                    <li class="event-item">
-                        <figure class="event-itemImage">
-                            <img src="./assets/img/img-event03.jpg" alt="">
-                        </figure>
-                        <div class="event-itemBody">
-                            <p class="event-itemDate">
-                                <time datetime="2021-04">2021.April</time>
-                            </p>
-                            <p class="event-itemName">オープン講演会</p>
-                        </div>
-                    </li>
-                    <li class="event-item">
-                        <figure class="event-itemImage">
-                            <img src="./assets/img/img-event04.jpg" alt="">
-                        </figure>
-                        <div class="event-itemBody">
-                            <p class="event-itemDate">
-                                <time datetime="2021-04">2021.April</time>
-                                <time datetime="2021-06">June</time>
-                            </p>
-                            <p class="event-itemName">チーム開発</p>
-                        </div>
-                    </li>
-                </ul>
+            <div id="js-eventSlide" class="splide event-slide">
+                <div class="splide__track">
+                    <ul class="splide__list event-list">
+                        <li class="splide__slide event-item">
+                            <figure class="event-itemImage">
+                                <img src="./assets/img/img-event01.jpg" class="event-itemImage01">
+                            </figure>
+                            <div class="event-itemBody">
+                                <p class="event-itemDate">
+                                    <time datetime="2021-04">2021.April</time>
+                                </p>
+                                <p class="event-itemName">入学式</p>
+                            </div>
+                        </li>
+                        <li class="splide__slide event-item">
+                            <figure class="event-itemImage">
+                                <img src="./assets/img/img-event02.jpg" alt="">
+                            </figure>
+                            <div class="event-itemBody">
+                                <p class="event-itemDate">
+                                    <time datetime="2021-03">2021.Mar</time>
+                                </p>
+                                <p class="event-itemName">軽井沢旅行</p>
+                            </div>
+                        </li>
+                        <li class="splide__slide event-item">
+                            <figure class="event-itemImage">
+                                <img src="./assets/img/img-event03.jpg" alt="">
+                            </figure>
+                            <div class="event-itemBody">
+                                <p class="event-itemDate">
+                                    <time datetime="2021-04">2021.April</time>
+                                </p>
+                                <p class="event-itemName">オープン講演会</p>
+                            </div>
+                        </li>
+                        <li class="splide__slide event-item">
+                            <figure class="event-itemImage">
+                                <img src="./assets/img/img-event04.jpg" alt="">
+                            </figure>
+                            <div class="event-itemBody">
+                                <p class="event-itemDate">
+                                    <time datetime="2021-04">2021.April</time>
+                                    <time datetime="2021-06">June</time>
+                                </p>
+                                <p class="event-itemName">チーム開発</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         </section>
@@ -213,7 +244,7 @@
                     </p>
                 </div>
             </div>
-            <div class="section-body">
+            <div class="section-body">  
                 <div class="container">
                     <div class="about-column">
                         <div class="daily-slide">
@@ -368,4 +399,6 @@
             <small lang="en">&copy; 2023 POSSE</small>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+<script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/5-2-1/js/5-2-1.js"></script>
 </body>
